@@ -7,11 +7,11 @@ const messagePopUp = document.querySelector("#message-box");
 const bodyElement = document.querySelector("body");
 const titleElement = document.querySelector("#title");
 
-const audioObject = new Audio("./../sound/collect-good.wav");
-const audioObjectGrunt = new Audio("./../sound/grunt-sound.wav");
-const gongStart = new Audio("./../sound/chinese-gong.mp3");
-const audioObjectSuperCollect = new Audio("./../sound/collect-super-good.ogg");
-const forestAmbiant = new Audio("./../sound/sound-forest.mp3");
+const audioObject = new Audio("/Game/sound/collect-good.wav");
+const audioObjectGrunt = new Audio("/Game/sound/grunt-sound.wav");
+const gongStart = new Audio("/Game/sound/chinese-gong.mp3");
+const audioObjectSuperCollect = new Audio("/Game/sound/collect-super-good.ogg");
+const forestAmbiant = new Audio("/Game/sound/sound-forest.mp3");
 gongStart.play();
 forestAmbiant.play();
 audioBackground.play();
