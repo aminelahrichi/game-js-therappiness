@@ -4,11 +4,18 @@ const soundIcon = document.querySelector(".sound-music");
 const audioBackground = document.querySelector(".background-music");
 const updateScore = document.querySelector("#update");
 const messagePopUp = document.querySelector("#message-box");
+const bodyElement = document.querySelector("body");
 
 const audioObject = new Audio("./../sound/collect-good.wav");
 const audioObjectGrunt = new Audio("./../sound/grunt-sound.wav");
-const gong = new Audio("./../sound/chinese-gong.wav");
-gong.play();
+const gongStart = new Audio("./../sound/chinese-gong.mp3");
+const audioObjectSuperCollect = new Audio("./../sound/collect-super-good.ogg");
+const forestAmbiant = new Audio("./../sound/sound-forest.mp3");
+gongStart.play();
+forestAmbiant.play();
+audioBackground.play();
+forestAmbiant.loop = true;
+
 //Function activateMusic
 function activateMusic() {
   soundIcon.classList.toggle("on");
@@ -16,6 +23,7 @@ function activateMusic() {
   if (soundIcon.classList.contains("on")) {
     audioBackground.play();
   } else {
+    audioBackground.autoplay = false;
     audioBackground.pause();
   }
 }
@@ -47,15 +55,15 @@ class Character {
     this.points += thought.points;
     scoreUpdate();
     if (thought.points > 0) {
-      messagePopUp.innerHTML = `<div id="message-box">A ${thought.name} is always a good idea.. +${thought.points} point(s) !</div><br>`;
+      messagePopUp.innerHTML = `<div id="message-box" class ="bounce-top">A ${thought.name}! +${thought.points} point(s) !</div><br>`;
       setTimeout(function() {
         messagePopUp.textContent = "";
-      }, 2000);
+      }, 2500);
     } else if (thought.points < 0) {
-      messagePopUp.innerHTML = `<div id="message-box">Oh.. you've just collected a ${thought.name}.. ${thought.points} points !</div><br>`;
+      messagePopUp.innerHTML = `<div id="message-box" class ="bounce-top">Oh.. a ${thought.name}.. ${thought.points} points !</div><br>`;
       setTimeout(function() {
         messagePopUp.textContent = "";
-      }, 2000);
+      }, 2500);
     }
   }
   stopMoving() {
@@ -121,7 +129,7 @@ function checkEndGame() {
 var sickCharacter = new Character();
 const badThought = new Thought("Bad Thought", -2, "bad-thought");
 badThought.position.x = 1500;
-const goodThought = new Thought("Good Thought", +1, "good-thought");
+const goodThought = new Thought("Good Thought", +5, "good-thought");
 goodThought.position.x = 2100;
 const superGoodThought = new Thought(
   "Super Good Thought",
@@ -187,7 +195,7 @@ const draw = timestamp => {
   ) {
     sickCharacter.collectThought(superGoodThought);
     superGoodThought.selector.style.display = "none";
-    soundCollect();
+    soundSuperCollect();
     superGoodThought.crash += 1;
     if (checkEndGame()) console.log("This is the end of the game");
   }
@@ -197,8 +205,6 @@ const draw = timestamp => {
   if (keyState["ArrowLeft"]) sickCharacter.movePlayer("left");
   if (!sickCharacter.isMoving) sickCharacter.stopMoving();
   requestAnimationFrame(draw);
-
-  //Score update
 };
 
 function startGame() {
@@ -267,7 +273,23 @@ function moveSuperGoodThought(supergoodthought) {
 // Score update function
 function scoreUpdate() {
   updateScore.style.width = `${sickCharacter.points}%`;
-  console.log(`${sickCharacter.points}%;`);
+  if (sickCharacter.points < 20) {
+    bodyElement.className = `background-body-1`;
+  } else if (sickCharacter.points < 30) {
+    bodyElement.className = `background-body-2`;
+  } else if (sickCharacter.points < 40) {
+    bodyElement.className = `background-body-3`;
+  } else if (sickCharacter.points < 50) {
+    bodyElement.className = `background-body-4`;
+  } else if (sickCharacter.points < 60) {
+    bodyElement.className = `background-body-5`;
+  } else if (sickCharacter.points < 70) {
+    bodyElement.className = `background-body-6`;
+  } else if (sickCharacter.points < 80) {
+    bodyElement.className = `background-body-7`;
+  } else if (sickCharacter.points < 90) {
+    bodyElement.className = `background-body-8`;
+  }
 }
 // Function sound collect
 function soundCollect() {
@@ -275,6 +297,9 @@ function soundCollect() {
 }
 function soundCollectGrunt() {
   audioObjectGrunt.play();
+}
+function soundSuperCollect() {
+  audioObjectSuperCollect.play();
 }
 // Button Music
 musicBtn.onclick = activateMusic;

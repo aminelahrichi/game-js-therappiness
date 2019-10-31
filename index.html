@@ -12,21 +12,25 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <audio autoplay class="background-music">
-      <source src="/sound/magical_theme.mp3" type="audio/mp3">
+  <body class="background-body-1">
+    <audio
+      class="background-music"
+      src="/sound/magical_theme.mp3"
+      type="audio/mp3"
+    >
+      <source src="/sound/magical_theme.mp3" type="audio/mp3" />
     </audio>
     <audio class="sound-collect">
-      <source src="/sound/collect-good.wav" type="audio/wav">
+      <source src="/sound/collect-good.wav" type="audio/wav" />
     </audio>
-    <div class="score-update">
-      <p>Score</p>
+    <div class="score-update bounce-in-left">
+      <p>happiness status</p>
       <div id="score">
         <div id="update"></div>
       </div>
     </div>
     <div class="scene">
-      <div id="message-box"></div>
+      <div id="message-box" class="bounce-top"></div>
       <div id="character" class="character-right"></div>
       <div class="bad-thought"></div>
       <div class="super-good-thought"></div>
@@ -38,6 +42,7 @@
         <img class="replay" src="/img/replay.png" alt="replay" />
         <button id="restart-button">Restart</button>
       </div>
+      <p id="caption">Yesterday is not ours to recover, but tomorrow is ours to win or lose.</p>
       <div>
         <button id="music-button">Music</button>
         <div class="sound-music on"></div>
