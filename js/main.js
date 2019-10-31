@@ -5,6 +5,7 @@ const audioBackground = document.querySelector(".background-music");
 const updateScore = document.querySelector("#update");
 const messagePopUp = document.querySelector("#message-box");
 const bodyElement = document.querySelector("body");
+const titleElement = document.querySelector("#title");
 
 const audioObject = new Audio("./../sound/collect-good.wav");
 const audioObjectGrunt = new Audio("./../sound/grunt-sound.wav");
@@ -27,7 +28,6 @@ function activateMusic() {
     audioBackground.pause();
   }
 }
-
 // CLASS CREATION FOR MY CHARACTER & DIFFERENT OBJECTS
 class Thought {
   constructor(name, points, selector) {
@@ -55,7 +55,7 @@ class Character {
     this.points += thought.points;
     scoreUpdate();
     if (thought.points > 0) {
-      messagePopUp.innerHTML = `<div id="message-box" class ="bounce-top">A ${thought.name}! +${thought.points} point(s) !</div><br>`;
+      messagePopUp.innerHTML = `<div id="message-box" class ="bounce-top">A ${thought.name}! +${thought.points} points !</div><br>`;
       setTimeout(function() {
         messagePopUp.textContent = "";
       }, 2500);
@@ -127,13 +127,13 @@ function checkEndGame() {
 
 // Object SETUP
 var sickCharacter = new Character();
-const badThought = new Thought("Bad Thought", -2, "bad-thought");
+const badThought = new Thought("Bad Thought", -4, "bad-thought");
 badThought.position.x = 1500;
-const goodThought = new Thought("Good Thought", +5, "good-thought");
+const goodThought = new Thought("Good Thought", +2, "good-thought");
 goodThought.position.x = 2100;
 const superGoodThought = new Thought(
   "Super Good Thought",
-  +5,
+  +6,
   "super-good-thought"
 );
 superGoodThought.position.x = 5000;
@@ -273,6 +273,7 @@ function moveSuperGoodThought(supergoodthought) {
 // Score update function
 function scoreUpdate() {
   updateScore.style.width = `${sickCharacter.points}%`;
+  titleElement.textContent = `Happiness status (${sickCharacter.points}%)`;
   if (sickCharacter.points < 20) {
     bodyElement.className = `background-body-1`;
   } else if (sickCharacter.points < 30) {

@@ -24,7 +24,7 @@
       <source src="/sound/collect-good.wav" type="audio/wav" />
     </audio>
     <div class="score-update bounce-in-left">
-      <p id="title">Happiness status</p>
+      <span><p id="title">Happiness status (10%)</p></span>
       <div id="score">
         <div id="update"></div>
       </div>
@@ -40,9 +40,11 @@
     <div class="button">
       <div>
         <img class="replay" src="/img/replay.png" alt="replay" />
-        <button id="restart-button">Restart</button>
+        <button onClick="location.reload()" id="restart-button">Restart</button>
       </div>
-      <p id="caption">Yesterday is not ours to recover, but tomorrow is ours to win or lose.</p>
+      <p id="caption">
+        Yesterday is not ours to recover, but tomorrow is ours to win or lose.
+      </p>
       <div>
         <button id="music-button">Music</button>
         <div class="sound-music on"></div>
