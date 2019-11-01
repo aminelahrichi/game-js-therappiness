@@ -6,12 +6,14 @@ const updateScore = document.querySelector("#update");
 const messagePopUp = document.querySelector("#message-box");
 const bodyElement = document.querySelector("body");
 const titleElement = document.querySelector("#title");
+const restartGameBtn = document.querySelector(".playagain");
 
 const audioObject = new Audio("/Game/sound/collect-good.wav");
 const audioObjectGrunt = new Audio("/Game/sound/grunt-sound.wav");
 const gongStart = new Audio("/Game/sound/chinese-gong.mp3");
 const audioObjectSuperCollect = new Audio("/Game/sound/collect-super-good.ogg");
 const forestAmbiant = new Audio("/Game/sound/sound-forest.mp3");
+
 gongStart.play();
 forestAmbiant.play();
 audioBackground.play();
@@ -112,28 +114,26 @@ class Character {
 }
 // FUNCTION END GAME TO VERIFY THE GAME STATUS
 function checkEndGame() {
+  console.log(sickCharacter.points);
   if (sickCharacter.points <= 0) {
-    console.log(
-      `You will always have a second chance for your path to happiness.. try again`
-    );
+    document.querySelector(".lost").style.display = "block";
     return true;
   } else if (sickCharacter.points >= 100) {
-    console.log(
-      `Congratulations. You are now in the right path to conscious happiness!`
-    );
+    console.log("iamhere in the");
+    document.querySelector(".win").style.display = "block";
     return true;
   } else return false;
 }
 
 // Object SETUP
 var sickCharacter = new Character();
-const badThought = new Thought("Bad Thought", -4, "bad-thought");
+const badThought = new Thought("Bad Thought", -5, "bad-thought");
 badThought.position.x = 1500;
-const goodThought = new Thought("Good Thought", +2, "good-thought");
+const goodThought = new Thought("Good Thought", +4, "good-thought");
 goodThought.position.x = 2100;
 const superGoodThought = new Thought(
   "Super Good Thought",
-  +6,
+  +8,
   "super-good-thought"
 );
 superGoodThought.position.x = 5000;
@@ -162,7 +162,12 @@ const draw = timestamp => {
   updateSuperGoodThought();
 
   //Detect a collision and end game status
-  if (detectCollision(badThought, sickCharacter) && badThought.crash === 0) {
+  if (
+    detectCollision(badThought, sickCharacter) &&
+    badThought.crash === 0 &&
+    sickCharacter.points > 0 &&
+    sickCharacter.points < 100
+  ) {
     soundCollectGrunt();
     sickCharacter.collectThought(badThought);
     badThought.crash += 1;
@@ -180,24 +185,32 @@ const draw = timestamp => {
       ],
       { duration: 300, easing: "ease-in", iterations: 5 }
     );
-    if (checkEndGame()) console.log("This is the end of the game");
+    checkEndGame();
   }
-  if (detectCollision(goodThought, sickCharacter) && goodThought.crash === 0) {
+  if (
+    detectCollision(goodThought, sickCharacter) &&
+    goodThought.crash === 0 &&
+    sickCharacter.points < 100 &&
+    sickCharacter.points > 0
+  ) {
+    console.log("hehe");
     sickCharacter.collectThought(goodThought);
     goodThought.selector.style.display = "none";
     soundCollect();
     goodThought.crash += 1;
-    if (checkEndGame()) console.log("This is the end of the game");
+    checkEndGame();
   }
   if (
     detectCollision(superGoodThought, sickCharacter) &&
-    superGoodThought.crash === 0
+    superGoodThought.crash === 0 &&
+    sickCharacter.points < 100 &&
+    sickCharacter.points > 0
   ) {
     sickCharacter.collectThought(superGoodThought);
     superGoodThought.selector.style.display = "none";
     soundSuperCollect();
     superGoodThought.crash += 1;
-    if (checkEndGame()) console.log("This is the end of the game");
+    checkEndGame();
   }
   //Keyboard movement
   if (keyState["Space"]) sickCharacter.jump();
@@ -274,6 +287,13 @@ function moveSuperGoodThought(supergoodthought) {
 function scoreUpdate() {
   updateScore.style.width = `${sickCharacter.points}%`;
   titleElement.textContent = `Happiness status (${sickCharacter.points}%)`;
+  if (sickCharacter.points <= 0) {
+    titleElement.textContent = `Happiness status (0%)`;
+    updateScore.style.width = `0%`;
+  } else if (sickCharacter.points >= 100) {
+    titleElement.textContent = `Happiness status (100%)`;
+    updateScore.style.width = `100%`;
+  }
   if (sickCharacter.points < 20) {
     bodyElement.className = `background-body-1`;
   } else if (sickCharacter.points < 30) {
@@ -304,3 +324,10 @@ function soundSuperCollect() {
 }
 // Button Music
 musicBtn.onclick = activateMusic;
+
+//restart-game-button
+
+function restartTheGame() {
+  document.location.reload();
+}
+restartGameBtn.onclick = restartTheGame;

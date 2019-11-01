@@ -166,6 +166,10 @@ p {
 #music-button:active {
   top: 0.4em;
 }
+#music-button:hover{
+  background-color: rgb(190, 216, 85)
+}
+
 
 #restart-button {
   display: inline-block;
@@ -188,6 +192,9 @@ p {
 
 #restart-button:active {
   top: 0.4em;
+}
+#restart-button:hover{
+  background-color: rgb(190, 216, 85)
 }
 
 .replay {
@@ -267,6 +274,90 @@ p {
   bottom: 380px;
 }
 
+/*POPUP WIN*/
+.win {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 55%;
+  text-align: center;
+  height: 350px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid;
+  border-radius: 20px;
+  z-index:992;
+  position: absolute;
+  display: none;
+  font-family: 'Londrina Solid', cursive;
+  opacity: 0.9;
+  line-height: 1.6;
+  top: 16%;
+  left: 22%;
+}
+
+#win-title{
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+#win-message {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+/*END POPUP*/
+.lost {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 55%;
+  text-align: center;
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid;
+  border-radius: 20px;
+  z-index: 99;
+  position: absolute;
+  /* display: none; */
+  font-family: 'Londrina Solid', cursive;
+  opacity: 0.9;
+  display: none;
+  top: 16%;
+  left: 22%;
+}
+
+#lost-title{
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+#lost-message {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+.playagain {
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  /*margin: 0 0.3em 0.3em 0; */
+  border-radius: 0.4em;
+  text-decoration: none;
+  font-family: 'Londrina Solid', cursive;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: black;
+  background-color: #CDD1C4;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: relative;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  z-index: 99;
+}
+.playagain:hover {
+  background-color: rgb(190, 216, 85)
+}
 /* ANIMATION */
 .bounce-top {
   -webkit-animation: bounce-top 1.5s both;

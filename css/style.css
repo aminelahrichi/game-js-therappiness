@@ -32,6 +32,7 @@ body {
 #play:hover {
     background-color: rgb(190, 216, 85)
 }
+
 #goback {
     display: inline-block;
     padding: 0.7em 1.4em;
@@ -55,6 +56,10 @@ body {
 
 #goback:hover {
     background-color: rgb(190, 216, 85)
+}
+
+#goback:active {
+    top: 0.4em;
 }
 
 #rules {
@@ -81,6 +86,10 @@ body {
 
 #rules:hover {
     background-color: rgb(190, 216, 85)
+}
+
+#rules:active {
+    top: 0.4em;
 }
 
 h1 {
@@ -121,7 +130,7 @@ h1 {
 #text {
     margin: 20px;
     font-size: 25px;
-    line-height: 1.6;   
+    line-height: 1.6;
     font-weight: 300;
 }
 
