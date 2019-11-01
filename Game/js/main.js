@@ -166,7 +166,7 @@ const draw = timestamp => {
     detectCollision(badThought, sickCharacter) &&
     badThought.crash === 0 &&
     sickCharacter.points > 0 &&
-    sickCharacter.points < 100
+    sickCharacter.points < 100  
   ) {
     soundCollectGrunt();
     sickCharacter.collectThought(badThought);

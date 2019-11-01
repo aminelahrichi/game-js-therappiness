@@ -1,4 +1,4 @@
-const forestSound = new Audio("/Game/sound/sound-forest.mp3");
+const forestSound = new Audio("./Game/sound/sound-forest.mp3");
 forestSound.play();
 forestSound.loop = true;
 const rulesBtn = document.querySelector("#rules");
