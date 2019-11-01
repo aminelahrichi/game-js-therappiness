@@ -11,7 +11,7 @@ class Thought {
     this.selector = document.querySelector(`.${selector}`);
     this.position = this.selector.getBoundingClientRect();
   }
-}
+} 
 
 const goodThought = new Thought("Good Thought", +2, "good-thought-1");
 goodThought.position.x = 900;
