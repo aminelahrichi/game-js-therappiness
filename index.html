@@ -15,19 +15,28 @@
   <body>
     <div class="scene">
       <h1>Happiness Therapy</h1>
-      <a href="/Game/index.html"
-        ><button id="play" class="vibrate-button">Play the Game</button></a
+      <a href="/Game/index.html"><button id="play">Play the Game</button></a>
+      <button
+        id="rules"
+        onclick="document.getElementsByClassName('popup')"
+        .style.display="block"
       >
-      <!-- <div class="instructions">
+        Rules
+      </button>
+      >
+      <div class="instructions">
         <p id="title-instruction">Rules</p>
-        <p>
-          You've just entered Abby's mind. 
-          It's a little bit dark down here. 
-          As you can see around you, Abby might have the blues.. 
-          You're main mission is to help Abby collect good thoughts and avoid dark ones to fill the happiness gauge to 100%.
-          You can use right & left keyboard key to move and the space bar to jump.
+        <p id="text">
+          You've just entered Abby's mind. <br />
+          It's a little bit dark down here. <br />
+          As you can see around you, Abby might have the blues.. <br />
+          You're main mission is to help Abby collect good thoughts and avoid
+          dark ones to fill the happiness gauge to 100%.<br /><br />
+          You can use right & left keyboard key to move<br />and the space bar
+          to jump.
         </p>
-      </div> -->
+        <button id="goback">Go back to the menu</button>
+      </div>
       <div class="good-thought-1"></div>
       <div class="good-thought-2"></div>
       <div class="characters"></div>

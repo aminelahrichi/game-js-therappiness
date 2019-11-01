@@ -1,7 +1,8 @@
 const forestSound = new Audio("/Game/sound/sound-forest.mp3");
 forestSound.play();
 forestSound.loop = true;
-
+const rulesBtn = document.querySelector("#rules");
+const goBackBtn = document.querySelector("#goback");
 class Thought {
   constructor(name, points, selector) {
     this.name = name;
@@ -17,13 +18,11 @@ goodThought.position.x = 900;
 const goodThought2 = new Thought("Good Thought", +2, "good-thought-2");
 goodThought2.position.x = 1400;
 
-
 const draw = timestamp => {
   moveGoodThought(goodThought);
   updateGoodThought();
   moveGoodThought2(goodThought2);
   updateGoodThought2();
-console.log(goodThought2.position.x)
   requestAnimationFrame(draw);
 };
 requestAnimationFrame(draw);
@@ -48,3 +47,12 @@ function moveGoodThought2(goodthought) {
   goodthought.position.x -= 0.5;
   goodthought.selector.style.transform = `translateX(${goodthought.position.x}px`;
 }
+
+function displayPopUp() {
+  document.querySelector(".instructions").style.display = "block";
+}
+function closePopUp() {
+  document.querySelector(".instructions").style.display = "none";
+}
+rulesBtn.onclick = displayPopUp;
+goBackBtn.onclick = closePopUp;

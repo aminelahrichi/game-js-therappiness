@@ -3,9 +3,11 @@
     padding: 0;
     font-family: 'Londrina Solid', cursive;
 }
-body{
+
+body {
     background: linear-gradient(to bottom, #40405c 0%, #6f71aa 80%, #8a76ab 100%);
 }
+
 #play {
     display: inline-block;
     padding: 0.7em 1.4em;
@@ -23,14 +25,69 @@ body{
     border: none;
     outline: none;
     margin: 0 15px 0 40px;
-    font-size: 30px;
-    z-index:2;
+    font-size: 20px;
+    z-index: 2;
+}
+
+#play:hover {
+    background-color: rgb(190, 216, 85)
+}
+#goback {
+    display: inline-block;
+    padding: 0.7em 1.4em;
+    /*margin: 0 0.3em 0.3em 0; */
+    border-radius: 0.4em;
+    text-decoration: none;
+    font-family: 'Londrina Solid', cursive;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
+    background-color: #CDD1C4;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+    border: none;
+    outline: none;
+    margin: 0 15px 0 40px;
+    font-size: 20px;
+    z-index: 2;
+}
+
+#goback:hover {
+    background-color: rgb(190, 216, 85)
+}
+
+#rules {
+    display: inline-block;
+    padding: 0.7em 1.4em;
+    /*margin: 0 0.3em 0.3em 0; */
+    border-radius: 0.4em;
+    text-decoration: none;
+    font-family: 'Londrina Solid', cursive;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
+    background-color: #CDD1C4;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+    border: none;
+    outline: none;
+    margin: 0 15px 0 40px;
+    font-size: 20px;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+#rules:hover {
+    background-color: rgb(190, 216, 85)
 }
 
 h1 {
     font-size: 80px;
     color: white;
     margin-bottom: 40px;
+    z-index: 2;
 }
 
 .scene {
@@ -40,7 +97,7 @@ h1 {
     align-items: center;
     width: 100%;
     height: 90vh;
-    background-image: url(/img/background-game-start.png);   
+    background-image: url(/img/background-game-start.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -50,17 +107,27 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 40%;
+    width: 55%;
     text-align: center;
-    height: 120px;
-    background-color: #CDD1C4;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
     border: 2px solid;
     border-radius: 20px;
     z-index: 2;
+    position: absolute;
+    display: none;
+}
+
+#text {
+    margin: 20px;
+    font-size: 25px;
+    line-height: 1.6;   
+    font-weight: 300;
 }
 
 #title-instruction {
     font-size: 40px;
+    margin-top: 20px;
 }
 
 .garden {
@@ -73,7 +140,8 @@ h1 {
     bottom: 0;
     border: none;
 }
-.characters{
+
+.characters {
     background-image: url(/img/characters.png);
     /* background-color: #73877b; */
     /* position: absolute; */
@@ -86,7 +154,8 @@ h1 {
     bottom: 80px;
     z-index: 0;
 }
-.good-thought-1{
+
+.good-thought-1 {
     width: 60px;
     height: 60px;
     background-image: url(/img/cloud-smile.png);
@@ -96,7 +165,8 @@ h1 {
     bottom: 500px;
     z-index: 1;
 }
-.good-thought-2{
+
+.good-thought-2 {
     width: 60px;
     height: 60px;
     background-image: url(/img/cloud-smile.png);
