@@ -8,8 +8,8 @@ const bodyElement = document.querySelector("body");
 const titleElement = document.querySelector("#title");
 const restartGameBtn = document.querySelector(".playagain");
 
-const audioObject = new Audio("./../sound/collect-good.wav");
-const audioObjectGrunt = new Audio("./../sound/grunt-sound.wav");
+const audioObject = new Audio("./Game/sound/collect-good.wav");
+const audioObjectGrunt = new Audio("./Game/sound/grunt-sound.wav");
 const gongStart = new Audio("./../sound/chinese-gong.mp3");
 const audioObjectSuperCollect = new Audio("./../sound/collect-super-good.ogg");
 const forestAmbiant = new Audio("./../sound/sound-forest.mp3");
