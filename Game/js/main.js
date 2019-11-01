@@ -8,11 +8,13 @@ const bodyElement = document.querySelector("body");
 const titleElement = document.querySelector("#title");
 const restartGameBtn = document.querySelector(".playagain");
 
-const audioObject = new Audio("/Game/sound/collect-good.wav");
-const audioObjectGrunt = new Audio("/Game/sound/grunt-sound.wav");
-const gongStart = new Audio("/Game/sound/chinese-gong.mp3");
-const audioObjectSuperCollect = new Audio("/Game/sound/collect-super-good.ogg");
-const forestAmbiant = new Audio("/Game/sound/sound-forest.mp3");
+const audioObject = new Audio("./Game/sound/collect-good.wav");
+const audioObjectGrunt = new Audio("./Game/sound/grunt-sound.wav");
+const gongStart = new Audio("./Game/sound/chinese-gong.mp3");
+const audioObjectSuperCollect = new Audio(
+  "./Game/sound/collect-super-good.ogg"
+);
+const forestAmbiant = new Audio("./Game/sound/sound-forest.mp3");
 
 gongStart.play();
 forestAmbiant.play();
@@ -166,7 +168,7 @@ const draw = timestamp => {
     detectCollision(badThought, sickCharacter) &&
     badThought.crash === 0 &&
     sickCharacter.points > 0 &&
-    sickCharacter.points < 100  
+    sickCharacter.points < 100
   ) {
     soundCollectGrunt();
     sickCharacter.collectThought(badThought);
