@@ -140,7 +140,7 @@ h1 {
 }
 
 .garden {
-    background-image: url("../Game/img/garden.png");
+    background-image: url("./img/garden.png");
     width: 100%;
     height: 12vh;
     /* background-color: #73877b; */
