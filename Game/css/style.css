@@ -166,7 +166,8 @@ p {
 #music-button:active {
   top: 0.4em;
 }
-#music-button:hover{
+
+#music-button:hover {
   background-color: rgb(190, 216, 85)
 }
 
@@ -193,7 +194,8 @@ p {
 #restart-button:active {
   top: 0.4em;
 }
-#restart-button:hover{
+
+#restart-button:hover {
   background-color: rgb(190, 216, 85)
 }
 
@@ -209,11 +211,11 @@ p {
 }
 
 .sound-music.on {
-  background-image: url(/Game/img/music-on.png);
+  background-image: url("./Game/img/music-on.png");
 }
 
 .sound-music.off {
-  background-image: url(/Game/img/music-off.png);
+  background-image: url("./Game/img/music-off.png");
 }
 
 #caption {
@@ -228,7 +230,7 @@ p {
 .character-right {
   width: calc(630px / 7);
   height: 198px;
-  background-image: url(/Game/img/right-character-2.png);
+  background-image: url("./Game/img/right-character-2.png");
   z-index: 7;
   /* -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
@@ -237,13 +239,13 @@ p {
 .character-left {
   width: calc(630px / 7);
   height: 198px;
-  background-image: url(/Game/img/left-character-2.png);
+  background-image: url("./Game/img/left-character-2.png");
   z-index: 7;
 }
 
 .bad-thought {
   /* background-color: #93caa9; */
-  background-image: url(/Game/img/badthought.gif);
+  background-image: url("./Game/img/badthought.gif");
   height: 100px;
   width: 100px;
   position: relative;
@@ -254,7 +256,7 @@ p {
 
 .good-thought {
   /* background-color: #93caa9; */
-  background-image: url(/Game/img/goodthought.png);
+  background-image: url("./Game/img/goodthought.png");
   height: 60px;
   width: 60px;
   position: relative;
@@ -265,7 +267,7 @@ p {
 
 .super-good-thought {
   /* background-color: #015d3f; */
-  background-image: url(/Game/img/supergoodthought.png);
+  background-image: url("./Game/img/supergoodthought.png");
   height: 90px;
   width: 60px;
   position: relative;
@@ -286,7 +288,7 @@ p {
   background-color: rgb(255, 255, 255);
   border: 2px solid;
   border-radius: 20px;
-  z-index:992;
+  z-index: 992;
   position: absolute;
   display: none;
   font-family: 'Londrina Solid', cursive;
@@ -296,7 +298,7 @@ p {
   left: 22%;
 }
 
-#win-title{
+#win-title {
   font-size: 60px;
   margin-top: 20px;
 }
@@ -305,6 +307,7 @@ p {
   font-size: 35px;
   margin-bottom: 20px;
 }
+
 /*END POPUP*/
 .lost {
   display: flex;
@@ -327,7 +330,7 @@ p {
   left: 22%;
 }
 
-#lost-title{
+#lost-title {
   font-size: 60px;
   margin-top: 20px;
 }
@@ -336,6 +339,7 @@ p {
   font-size: 35px;
   margin-bottom: 30px;
 }
+
 .playagain {
   display: inline-block;
   padding: 0.7em 1.4em;
@@ -355,9 +359,11 @@ p {
   font-size: 20px;
   z-index: 99;
 }
+
 .playagain:hover {
   background-color: rgb(190, 216, 85)
 }
+
 /* ANIMATION */
 .bounce-top {
   -webkit-animation: bounce-top 1.5s both;
