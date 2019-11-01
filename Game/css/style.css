@@ -86,7 +86,7 @@ p {
 }
 
 .scene {
-  background-image: url(/Game/img/Background-game.png);
+  background-image: url("../img/Background-game.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -116,7 +116,7 @@ p {
 }
 
 .garden {
-  background-image: url(/Game/img/garden.png);
+  background-image: url("../img/garden.png");
   width: 100%;
   height: 12vh;
   /* background-color: #73877b; */
@@ -211,11 +211,11 @@ p {
 }
 
 .sound-music.on {
-  background-image: url("./Game/img/music-on.png");
+  background-image: url("../img/music-on.png");
 }
 
 .sound-music.off {
-  background-image: url("./Game/img/music-off.png");
+  background-image: url("../img/music-off.png");
 }
 
 #caption {
@@ -230,7 +230,7 @@ p {
 .character-right {
   width: calc(630px / 7);
   height: 198px;
-  background-image: url("./Game/img/right-character-2.png");
+  background-image: url("../img/right-character-2.png");
   z-index: 7;
   /* -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
@@ -239,13 +239,13 @@ p {
 .character-left {
   width: calc(630px / 7);
   height: 198px;
-  background-image: url("./Game/img/left-character-2.png");
+  background-image: url("../img/left-character-2.png");
   z-index: 7;
 }
 
 .bad-thought {
   /* background-color: #93caa9; */
-  background-image: url("./Game/img/badthought.gif");
+  background-image: url("../img/badthought.gif");
   height: 100px;
   width: 100px;
   position: relative;
@@ -256,7 +256,7 @@ p {
 
 .good-thought {
   /* background-color: #93caa9; */
-  background-image: url("./Game/img/goodthought.png");
+  background-image: url("../img/goodthought.png");
   height: 60px;
   width: 60px;
   position: relative;
@@ -267,7 +267,7 @@ p {
 
 .super-good-thought {
   /* background-color: #015d3f; */
-  background-image: url("./Game/img/supergoodthought.png");
+  background-image: url("../img/supergoodthought.png");
   height: 90px;
   width: 60px;
   position: relative;
